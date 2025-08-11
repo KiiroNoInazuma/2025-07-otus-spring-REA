@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class StreamsIOService implements IOService {
     private final PrintStream printStream;
+
     private final Scanner scanner;
 
     public StreamsIOService(PrintStream printStream) {

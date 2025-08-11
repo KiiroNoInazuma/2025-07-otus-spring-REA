@@ -21,7 +21,8 @@ public class CsvQuestionDao implements QuestionDao {
 
     @Override
     public List<Question> findAll() {
-        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileNameProvider.getTestFileName())) {
+        try (InputStream inputStream = getClass().getClassLoader()
+                .getResourceAsStream(fileNameProvider.getTestFileName())) {
             if (isNull(inputStream)) {
                 throw new QuestionReadException(String.format("File not found %s",
                         fileNameProvider.getTestFileName()));
@@ -32,7 +33,6 @@ public class CsvQuestionDao implements QuestionDao {
                     .withSeparator(';')
                     .build()
                     .parse();
-
             return questionDtos.stream()
                     .map(QuestionDto::toDomainObject)
                     .collect(Collectors.toList());

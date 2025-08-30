@@ -33,6 +33,7 @@ public class CsvQuestionDao implements QuestionDao {
         return questionDtoCsvToBeanBuild(inputStream)
                 .withType(QuestionDto.class)
                 .withSeparator(';')
+                .withSkipLines(1)
                 .build()
                 .parse();
     }

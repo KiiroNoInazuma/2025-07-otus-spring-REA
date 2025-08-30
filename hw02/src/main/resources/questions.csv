@@ -1,0 +1,3 @@
+text;answers
+"What is 2+2?";"3%false|4%true|5%false"
+"What is the capital of Russia?";"London%false|Moscow%true|Berlin%false"
